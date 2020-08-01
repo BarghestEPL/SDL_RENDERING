@@ -38,7 +38,7 @@ int main(int argc, char *argv[]){
         return EXIT_FAILURE;
     }
     
-    vector2D_t a = {600, 400}, b = {600, 200};
+    vector2D_t a = {600, 200}, b = {600, 400};
     SDL_bool run = SDL_TRUE;
     while(run){
         SDL_Event event;
@@ -58,6 +58,7 @@ int main(int argc, char *argv[]){
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
         SDL_RenderDrawLineF(renderer, a.x, a.y, b.x, b.y);
+        vector2D_rot(&a, &b, 0.1);
 
         SDL_RenderPresent(renderer);
         SDL_Delay(60);
